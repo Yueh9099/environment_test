@@ -75,7 +75,9 @@ RSpec.describe 'Showing a book', type: :feature do
     fill_in 'Title', with: 'harry potter'
     fill_in 'Author', with: 'Yue Hu'
     fill_in 'Price', with: 2000
-    fill_in 'Published Date', with: Date.parse("Dec 8 2015")
+    select '2021', :from => 'book_published_date_1i'
+    select 'December', :from => 'book_published_date_2i'
+    select '30', :from => 'book_published_date_3i'
     click_on 'Create Book'
     visit books_path
     click_on 'Show'
